@@ -6,4 +6,5 @@ export class Calculator {
         }
         return result;
     }
+    
 }
