@@ -10,6 +10,7 @@ function main(): void {
     while (true) {
         console.log("\nChoose an operation:");
         console.log("1. Addition");
+        
         console.log("0. Exit");
         const choice :string =readline.question("choose an option ");
 
