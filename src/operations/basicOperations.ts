@@ -1,5 +1,9 @@
 export class Calculator {
-    add (num1 :number , num2 : number): number {
-        return num1+ num2;
+    add (numberArray : number[]): number {
+        let result : number = 0;
+        for (let sum of numberArray){
+            result += sum;
+        }
+        return result;
     }
 }
