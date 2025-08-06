@@ -4,14 +4,14 @@ import { validateNumberArray } from "./utils/utils";
 
 const calculator = new Calculator();
 
-function main() : void {
-    console.log("===========Calculator===========");
-    console.log("\n Choose an operator :");
-    console.log("1. Addition");
-    console.log("0. Exit");
+function main(): void {
+    console.log("=========== Calculator ===========");
 
-    while(true){
-        const choice : string = readline.question("Enter your choice:");
+    while (true) {
+        console.log("\nChoose an operation:");
+        console.log("1. Addition");
+        console.log("0. Exit");
+        const choice :string =readline.question("choose an option ");
 
         switch (choice){
             case '1' : {
@@ -29,18 +29,17 @@ function main() : void {
                 const result : number = calculator.add(numberArray);
 
                 console.log("Result : ",result);
+
                 break;
             }
             case '0': {
                 console.log("Exiting calculator");
-                process.exit(0); 
+                process.exit(0);
             }
-            default : 
-                console.log("Invalid Operator");
+            default:
+                console.log("Invalid operator. Please enter a valid option.\n");
         }
-
     }
-
 }
 
 main();
