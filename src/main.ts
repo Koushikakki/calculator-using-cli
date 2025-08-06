@@ -1,5 +1,6 @@
 import * as readline from "readline-sync";
 import { Calculator } from "./operations/basicOperations";
+import { validateNumberArray } from "./utils/utils";
 
 const calculator = new Calculator();
 
@@ -14,10 +15,20 @@ function main() : void {
 
         switch (choice){
             case '1' : {
-                const num1 : number = parseInt(readline.question("Enter first number : "));
-                const num2 : number = parseInt(readline.question("Enter second number : "));
-                let result : number = calculator.add(num1 , num2);
-                console.log(`Result : ${result}`);
+                const inputString : string = (readline.question("Enter numbers : "));
+                if(inputString === ""){
+                    console.log("input is empty");
+                    break;
+                }
+                const stringArray : string[] = inputString.trim().split(/\s+/);
+                const numberArray : number[] = stringArray.map(Number);
+                if(!validateNumberArray(numberArray)){
+                    console.log("Invalid input has entered");
+                    break;
+                }
+                const result : number = calculator.add(numberArray);
+
+                console.log("Result : ",result);
                 break;
             }
             case '0': {
