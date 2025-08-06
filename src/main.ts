@@ -22,8 +22,8 @@ function main(): void {
                 break;
             }
             case '0': {
-                console.log("Exiting calculator. Goodbye!");
-                process.exit(0); 
+                console.log("Exiting calculator");
+                process.exit(0);
             }
             default:
                 console.log("Invalid operator. Please enter a valid option.\n");
