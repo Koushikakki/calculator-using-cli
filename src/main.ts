@@ -10,6 +10,7 @@ function main(): void {
     while (true) {
         console.log("\nChoose an operation:");
         console.log("1. Addition");
+        console.log("2. Subtraction");
         
         console.log("0. Exit");
         const choice :string =readline.question("choose an option ");
@@ -33,6 +34,24 @@ function main(): void {
 
                 break;
             }
+            case '2':{
+                const inputString :string = readline.question("Enter Numbers : ");
+                if(inputString === ""){
+                    console.log("Input is empty");
+                    break;
+                }
+                const stringArray : string[] =inputString.trim().split(/\s+/);
+                const numberArray : number[] = stringArray.map(Number);
+                if(!validateNumberArray(numberArray)){
+                    console.log("Invalid input has entered");
+                    break;
+                }
+                const result :number =calculator.subtract(numberArray);
+                console.log("Result : ",result);
+                break;
+
+            }
+
             case '0': {
                 console.log("Exiting calculator");
                 process.exit(0);
