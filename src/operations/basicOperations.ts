@@ -6,5 +6,12 @@ export class Calculator {
         }
         return result;
     }
+    subtract(numberArray :number[]) : number {
+        let result : number = numberArray[0];
+        for(let i = 1 ;i < numberArray.length; i++){
+            result-=numberArray[i];
+        }
+        return result;
+    }
     
 }
